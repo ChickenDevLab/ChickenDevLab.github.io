@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Element
         run: |
-          rename config.sample.json config.json
+          Ren "config.sample.json" "config.json"
           yarn install
           yarn build
       - name: Deploy
