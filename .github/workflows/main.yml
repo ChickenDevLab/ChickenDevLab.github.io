@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - name: Setup Node
@@ -24,9 +24,9 @@ jobs:
 
       - name: Build Element
         run: |
-          mv config.sample.json config.json
+          rename config.sample.json config.json
           yarn install
-          yarn dist
+          yarn build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
